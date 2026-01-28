@@ -1,4 +1,6 @@
 """
+MAIN PROCESSING SCRIPT FOR GDELT FILES
+==========================================
 In this file all the classed needed to process the GDELT files are called
 On top of this, the inputs required are given and managed
 """
