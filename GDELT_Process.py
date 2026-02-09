@@ -18,6 +18,24 @@ from DataProcessingClasses.OOP_DirectGDELT_Processing import (
     GDELTProcessor,
     GDELTTimestampBatchRunner
 )
+
+import os
+ 
+# ================== Resolve paths relative to this script ======================
+ 
+# Path of this file: .../dataProcessing/GDELT_Process.py
+BASE_DIR = os.path.dirname(os.path.abspath(__file__)) # This is the cd where I am running the code
+ 
+# Path to dictionary: BASE, folder, file
+DICT_PATH = os.path.join(BASE_DIR, "Important_documents", "Dictionaries.xlsx") # <--- EDIT IF NEEDED
+DICT_PATH = os.path.abspath(DICT_PATH)
+ 
+# Path to output directory: BASE, file
+OUTPUT_DIR = os.path.join(BASE_DIR, "Output") # <--- EDIT IF NEEDED
+OUTPUT_DIR = os.path.abspath(OUTPUT_DIR)
+ 
+# Ensure output directory exists
+os.makedirs(OUTPUT_DIR, exist_ok=True)
  
 # Process ------------------------------------------------------------- DOWN --------------->
  
@@ -29,8 +47,10 @@ if __name__ == "__main__":
  
     # Here we need arguments: dictionary_path, output_dir, and optional column specifications
     processor = GDELTProcessor(
-        dictionary_path="./Dictionary/Dictionaries.xlsx",
-        output_dir="./Output",
+        # dictionary_path="./Dictionary/Dictionaries.xlsx",
+        # output_dir="./Output",
+        dictionary_path=DICT_PATH,
+        output_dir=OUTPUT_DIR,
         country_codes=[ # Optional
         'FR', 'GM', 'LU', 'LH', 'PL', 'RE', 'AU', 'BE', 'SP', 'DA', 'SZ', 'NL', 'FI', 
         'IT', 'HU', 'BU', 'SW', 'LG', 'EZ', 'MT', 'EN', 'IC', 'GL', 'LS', 'LO', 'SI', 
