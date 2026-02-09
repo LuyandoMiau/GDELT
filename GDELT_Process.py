@@ -27,7 +27,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__)) # This is the cd where I am running the code
  
 # Path to dictionary: BASE, folder, file
-DICT_PATH = os.path.join(BASE_DIR, "Important_documents", "Dictionaries.xlsx") # <--- EDIT IF NEEDED
+DICT_PATH = os.path.join(BASE_DIR, "Dictionary", "Dictionaries.xlsx") # <--- EDIT IF NEEDED
 DICT_PATH = os.path.abspath(DICT_PATH)
  
 # Path to output directory: BASE, file
@@ -71,6 +71,8 @@ if __name__ == "__main__":
             "Actor1Geo_Type",
             "Actor1Geo_Fullname",
             "Actor1Geo_CountryCode",
+            "Actor2Geo_CountryCode",
+            "ActionGeo_CountryCode",
             "NumMentions",
             "GoldsteinScale",
             "AvgTone"]
